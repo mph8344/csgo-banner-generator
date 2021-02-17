@@ -18,12 +18,13 @@ function App() {
       <div id="my-node">
         <Banner id="bannerbox"></Banner>
         <br/>
-        <h1>Your image will be located below!</h1>
+        
       </div>
+      <h1>Your image will be located below!</h1>
 
       <br/>
 
-      <div style={{width: '100%'}} id="renderto"></div>
+      <div id="renderto"></div>
 
     </div>
   );

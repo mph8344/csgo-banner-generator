@@ -5,7 +5,7 @@ import {Button, Input, Form, FormGroup, Label} from 'reactstrap';
 
 function handleClick() {
 
-var node = document.getElementById('my-node');
+var node = document.getElementById('testthing');
 
 var sendto = document.getElementById('renderto');
 
@@ -23,11 +23,6 @@ var sendto = document.getElementById('renderto');
 
 }
 
-function handleSubmit() {
-
-  var node = document.getElementById('leftMost').innerHTML = "<p>test</p>";
-
-}
   
 
 
