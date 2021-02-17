@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
+import logo from './NACCS_Logo.png';
 import { Modal, ModalHeader, ModalBody, Button, ModalFooter, Form, FormGroup, Label, Input} from 'reactstrap';
 
 class Banner extends React.Component {
@@ -25,7 +26,9 @@ class Banner extends React.Component {
                 <div className="flexcontainer" id="testthing"> 
                     <div className="newbox" id = "leftMost">{this.props.leftName}</div>
                     <div className="newbox" id = "left">{this.props.leftImg}</div>
-                    <div className="centerbox" id ="center"></div>
+                    <div className="centerbox" id ="center">
+                        <img src={logo} style={{width: '200px', height: 'auto'}}></img>
+                    </div>
                     <div className="newbox" id = "right">{this.props.rightName}</div>
                     <div className="newbox" id = "rightMost">{this.props.rightImg}</div>
                 </div>

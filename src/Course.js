@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { Card, CardBody, CardHeader, CardText, Button, CardFooter} from 'reactstrap';
 import CourseModal from './CourseModal'
 

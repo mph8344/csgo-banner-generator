@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 import { Modal, ModalHeader, ModalBody, Button, ModalFooter} from 'reactstrap';
 
 class CourseModal extends React.Component {

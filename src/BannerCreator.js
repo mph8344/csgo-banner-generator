@@ -26,7 +26,7 @@ var sendto = document.getElementById('renderto');
   
 
 
-class Thing extends React.Component {
+class BannerCreator extends React.Component {
 
   otherHandler = (event) => {
     event.preventDefault();
@@ -81,4 +81,4 @@ class Thing extends React.Component {
 }
 
 
-export default Thing;
+export default BannerCreator;
