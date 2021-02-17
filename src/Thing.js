@@ -37,9 +37,9 @@ class Thing extends React.Component {
     var rightName = form.rightName.value;
     var rightImg = form.rightImg.value;
 
-    document.getElementById('leftMost').innerHTML = leftImg;
-    document.getElementById('left').innerHTML = leftName;
-    document.getElementById('right').innerHTML = rightName;
+    document.getElementById('leftMost').innerHTML = '<img src="' + leftImg +'"/>';
+    document.getElementById('left').innerHTML = '<h1>' + leftName + '</h1>';
+    document.getElementById('right').innerHTML = '<h1>' + rightName + '</h1>';
     document.getElementById('rightMost').innerHTML = rightImg;
   }
 
