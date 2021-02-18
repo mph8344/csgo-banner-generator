@@ -1,10 +1,15 @@
 import React from 'react';
 import './App.scss';
 import Banner from './Banner';
-import CourseList from './CourseList';
 import BannerCreator from './BannerCreator';
+import firebase from './config';
+import UploadForm from './comps/UploadForm';
+import ImageGrid from './comps/ImageGrid';
 
-
+/*
+  <UploadForm/>
+      <ImageGrid/>
+*/
 
 function App() {
   return (
@@ -29,6 +34,7 @@ function App() {
       <br/>
 
       <div id="renderto"></div>
+      
 
     </div>
   );

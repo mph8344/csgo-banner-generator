@@ -2,8 +2,12 @@ import React from 'react';
 import './App.scss';
 import logo from './NACCS_Logo.png';
 import { Modal, ModalHeader, ModalBody, Button, ModalFooter, Form, FormGroup, Label, Input} from 'reactstrap';
+import firebase from './config';
+
 
 class Banner extends React.Component {
+
+    
 
     constructor(props) {
         super(props);
