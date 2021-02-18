@@ -46,7 +46,17 @@
   .main {
     position: relative;
     margin: 40px;
+    &.hide {
+      display: none;
+    }
   }
+
+  #my-node {
+    min-height: 1080px;
+    background-color: none;
+    width: 1920px;
+  }
+  
 
   #renderto {
     img {

@@ -16,20 +16,20 @@ function App() {
     
     <div className="App" >
       
-      <div id="my-node">
-        <Banner id="bannerbox"></Banner>
-        <br/>
-        
-      </div>
-
-
-      <div className="main"> 
+      <div className="main" id="mainbox"> 
         <BannerCreator/>
       </div>
 
+      <div id="my-node">
+        <Banner id="bannerbox"></Banner>
+      </div>
+
+
+      
+
       
       
-      <h1>Your image will be located below!</h1>
+      {/*<h1>Your image will be located below!</h1>*/}
 
       <br/>
 

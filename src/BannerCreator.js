@@ -1,33 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as htmlToImage from 'html-to-image';
 import useFirestore from './hooks/useFirestore';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 import {Button, Input, Form, FormGroup, Label} from 'reactstrap';
-
-
-
-
-
+import ProgressBar from './comps/ProgressBar';
 
 
 const BannerCreator = () => {
+    const [file, setFile] = useState(null);
+    const [error, setError] = useState(null);
+
+    const types = ['image/png', 'image/jpeg'];
+
+    const changeHandler = (e) => {
+        let selected = e;
+        console.log(selected);
+        if (selected && types.includes(selected.type)) {
+            console.log('i made it');
+            setFile(selected);
+            setError('');
+        } else {
+            console.log('here2');
+            setFile(null);
+            setError('Please select an image file (png or jpeg)');
+        }
+
+    }
 
   const handleClick = () => {
+
 
     var node = document.getElementById('testthing');
     
     var sendto = document.getElementById('renderto');
     
-      htmlToImage.toPng(node)
-        .then(function (dataUrl) {
-          console.log('here');
-          var img = new Image();
-          img.src = dataUrl;
-          sendto.appendChild(img);
-        })
-        .catch(function (error) {
-          console.error('oops, something went wrong!', error);
-        });
+    htmlToImage.toBlob(document.getElementById('my-node'))
+  .then(function (blob) {
+    //window.saveAs(blob, 'my-node.png');
+    changeHandler(blob);
+  });
     
     
     }
@@ -47,6 +58,8 @@ const BannerCreator = () => {
     document.getElementById('left').innerHTML = '<h1>' + leftName + '</h1>';
     document.getElementById('right').innerHTML = '<h1>' + rightName + '</h1>';
     document.getElementById('rightMost').innerHTML = '<img src="' + rightImg +'"/>';
+
+    //document.getElementById('mainbox').hidden = true;
   }
 
         return(
@@ -83,6 +96,11 @@ const BannerCreator = () => {
                 
                 <br/>
                 <Button style={{margin: '5px'}} color='primary' className="btn btn-primary"  onClick={handleClick}>Click to Render</Button>
+                <div className="output">
+                { error && <div className="error">{error}</div>} 
+                { file && <div> {file.name} </div>}
+                { file && <ProgressBar file={file}  setFile={setFile} />}
+            </div>
             </div>
         )
 
