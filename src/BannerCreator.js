@@ -5,30 +5,32 @@ import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 import {Button, Input, Form, FormGroup, Label} from 'reactstrap';
 
 
-function handleClick() {
 
-var node = document.getElementById('testthing');
-
-var sendto = document.getElementById('renderto');
-
-  htmlToImage.toPng(node)
-    .then(function (dataUrl) {
-      console.log('here');
-      var img = new Image();
-      img.src = dataUrl;
-      sendto.appendChild(img);
-    })
-    .catch(function (error) {
-      console.error('oops, something went wrong!', error);
-    });
-
-
-}
 
 
 
 
 const BannerCreator = () => {
+
+  const handleClick = () => {
+
+    var node = document.getElementById('testthing');
+    
+    var sendto = document.getElementById('renderto');
+    
+      htmlToImage.toPng(node)
+        .then(function (dataUrl) {
+          console.log('here');
+          var img = new Image();
+          img.src = dataUrl;
+          sendto.appendChild(img);
+        })
+        .catch(function (error) {
+          console.error('oops, something went wrong!', error);
+        });
+    
+    
+    }
 
   const {docs} = useFirestore('images');
 
@@ -80,7 +82,7 @@ const BannerCreator = () => {
                 <Button style={{margin: '5px'}} color='primary' type="submit" form="course" className="btn btn-primary">Ok</Button>
                 
                 <br/>
-                <Button style={{margin: '5px'}} color='primary' className="btn btn-primary"  onClick={() => handleClick()}>Click to Render</Button>
+                <Button style={{margin: '5px'}} color='primary' className="btn btn-primary"  onClick={handleClick}>Click to Render</Button>
             </div>
         )
 
