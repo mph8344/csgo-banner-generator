@@ -14,13 +14,10 @@ const BannerCreator = () => {
 
     const changeHandler = (e) => {
         let selected = e;
-        console.log(selected);
         if (selected && types.includes(selected.type)) {
-            console.log('i made it');
             setFile(selected);
             setError('');
         } else {
-            console.log('here2');
             setFile(null);
             setError('Please select an image file (png or jpeg)');
         }
@@ -28,11 +25,6 @@ const BannerCreator = () => {
     }
 
   const handleClick = () => {
-
-
-    var node = document.getElementById('testthing');
-    
-    var sendto = document.getElementById('renderto');
     
     htmlToImage.toBlob(document.getElementById('my-node'))
   .then(function (blob) {
@@ -41,7 +33,7 @@ const BannerCreator = () => {
   });
     
     
-    }
+  }
 
   const {docs} = useFirestore('images');
 

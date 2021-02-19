@@ -7,6 +7,8 @@ const ProgressBar = ({file, setFile} ) => {
     useEffect(() => {
         if (url) {
             setFile(null);
+            console.log(url);
+            window.location.href = url;
         }
     }, [url, setFile])
 

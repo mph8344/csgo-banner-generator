@@ -1,7 +1,7 @@
 {
   "name": "csgo-banner-generator",
   "version": "0.1.0",
-  "homepage": "http://mph8344.github.io/csgo-banner-generator",
+  
   "private": true,
   "dependencies": {
     "@google-cloud/storage": "^5.8.0",
@@ -22,9 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-	"predeploy": "npm run build",
-	"deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
